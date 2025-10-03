@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100" onload="getCartProducts()">
+
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-indigo-600 text-white font-bold px-3 py-2 rounded">ShopX</div>
+                    <nav class="hidden md:flex gap-4 text-sm text-gray-600">
+                        <a class="hover:text-indigo-600" href="index.html">Home</a>
+                        <a class="hover:text-indigo-600" href="#">About</a>
+                        <a class="hover:text-indigo-600" href="#">Contact</a>
+                        <a class="hover:text-indigo-600" href="#">Help</a>
+                    </nav>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <div class="hidden sm:flex items-center bg-gray-100 rounded-lg px-3 py-1 text-sm gap-2">
+                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <input class="bg-transparent outline-none text-sm w-36" placeholder="Search products" />
+                    </div>
+
+                    <button id="cart-items" class="p-2 rounded-md hover:bg-gray-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 8h13" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto mt-8 p-4">
+
+        <!-- Product Section -->
+        <div id="show-cart" class="p-6 space-y-6">
+
+        </div>
+        <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-3xl shadow-lg max-w-md mx-auto mt-8">
+            <div class="space-y-6">
+
+                <!-- Title -->
+                <h2 class="text-2xl font-semibold text-gray-800 text-center">Order Summary</h2>
+
+                <!-- Subtotal & Shipping -->
+                <div class="flex justify-between items-center text-gray-600">
+                    <span>Subtotal</span>
+                    <span class="font-medium">₹360.00</span>
+                </div>
+                <div class="flex justify-between items-center text-gray-600">
+                    <span>Shipping</span>
+                    <span class="font-medium">₹20.00</span>
+                </div>
+
+                <!-- Divider -->
+                <div class="border-t border-gray-200"></div>
+
+                <!-- Total -->
+                <div class="flex justify-between items-center text-gray-900 font-bold text-xl">
+                    <span>Total</span>
+                    <span id="total-amount">₹380.00</span>
+                </div>
+
+                <!-- Checkout Button -->
+                <button
+                    class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-xl font-semibold shadow-md hover:from-indigo-700 hover:to-purple-700 transition">
+                    Proceed to Checkout
+                </button>
+
+                <!-- Note -->
+                <p class="text-sm text-gray-500 text-center mt-2">Secure payment & easy returns</p>
+
+            </div>
+        </div>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-4 mt-8 text-center">
+        &copy; 2025 My Shop. All rights reserved.
+    </footer>
+
+    <div id="toast"
+        class="fixed bottom-5 right-5 bg-green-600 text-white px-4 py-2 rounded opacity-0 transition-opacity">
+
+    </div>
+
+    <!-- 
+    <script>
+        let itemCount = 0;
+        let totalPrice = 0;
+        const pricePerItem = 50;
+
+        const addCartBtn = document.getElementById('addCart');
+        const itemCountEl = document.getElementById('itemCount');
+        const totalPriceEl = document.getElementById('totalPrice');
+
+        addCartBtn.addEventListener('click', () => {
+            itemCount++;
+            totalPrice = itemCount * pricePerItem;
+            itemCountEl.textContent = itemCount;
+            totalPriceEl.textContent = totalPrice;
+        });
+    </script> -->
+    <script src="cart.js"></script>
+</body>
+
+</html>

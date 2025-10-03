@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>E-commerce Card Clone — Tailwind</title>
+
+  <!-- Tailwind Play CDN (no build tools required) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Small custom styles (optional) -->
+  <style>
+    /* subtle image cover fix for placeholders */
+    .img-cover {
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased" onload="getAllProducts()">
+
+  <!-- NAVBAR -->
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <div class="bg-indigo-600 text-white font-bold px-3 py-2 rounded">ShopX</div>
+          <nav class="hidden md:flex gap-4 text-sm text-gray-600">
+            <a class="hover:text-indigo-600" href="#">Home</a>
+            <a class="hover:text-indigo-600" href="#">About</a>
+            <a class="hover:text-indigo-600" href="#">Contact</a>
+            <a class="hover:text-indigo-600" href="#">Help</a>
+          </nav>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="hidden sm:flex items-center bg-gray-100 rounded-lg px-3 py-1 text-sm gap-2">
+            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input class="bg-transparent outline-none text-sm w-36" placeholder="Search products" />
+          </div>
+
+          <div class="relative">
+            <a href="Addtocart.html" class="text-gray-700 hover:text-blue-600 transition-colors focus:outline-none">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m5-9v9m4-9v9m5-9l2 9" />
+              </svg>
+            </a>
+            <span id="cart-items"
+              class="absolute top-0 bg-red-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+    <div
+      class="rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-500 text-white p-8 md:flex md:items-center md:justify-between">
+      <div>
+        <h1 class="text-2xl md:text-3xl font-semibold">Trending picks this week</h1>
+        <p class="mt-1 text-sm opacity-90 max-w-xl">Great deals on curated products — responsive layout and
+          pixel-perfect cards built with Tailwind CSS.</p>
+      </div>
+      <div class="mt-4 md:mt-0">
+        <a href="#"
+          class="inline-block bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium shadow-sm hover:shadow-md">Shop
+          Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-lg font-semibold">Featured Products</h2>
+      <div class="text-sm text-gray-600">Showing <span class="font-medium">8</span> results</div>
+    </div>
+
+    <div id="all-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- PRODUCT CARD (repeat) -->
+      <!-- Card 1 -->
+
+
+
+      <!-- /PRODUCT CARD repeat end -->
+
+    </div>
+
+    <!-- PAGINATION (visual only) -->
+    <div class="mt-8 flex justify-center">
+      <nav class="inline-flex items-center gap-2">
+        <button class="px-3 py-1 rounded-lg bg-white border">Prev</button>
+        <button class="px-3 py-1 rounded-lg bg-indigo-600 text-white">1</button>
+        <button class="px-3 py-1 rounded-lg bg-white border">2</button>
+        <button class="px-3 py-1 rounded-lg bg-white border">3</button>
+        <button class="px-3 py-1 rounded-lg bg-white border">Next</button>
+      </nav>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+        <div class="text-sm text-gray-600">© <span id="year"></span> ShopX. All rights reserved.</div>
+        <div class="flex gap-4 text-sm text-gray-600">
+          <a href="#" class="hover:text-indigo-600">Terms</a>
+          <a href="#" class="hover:text-indigo-600">Privacy</a>
+          <a href="#" class="hover:text-indigo-600">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Toast Notification -->
+  <div id="toast"
+    class="fixed top-5 right-5 bg-green-500 text-white px-8 py-2 rounded shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none">
+    Message
+  </div>
+
+  <script src="main.js">
+    // small script to set year (optional, remove if strictly no JS requested)
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+  </script>
+</body>
+
+</html>
