@@ -29,9 +29,7 @@ async function getAllProducts() {
             })
             prod.className = "bg-white rounded-2xl shadow-sm overflow-hidden group"
             prod.innerHTML = `<img src="${ele.thumbnail}" alt="${ele.title}" class="w-full h-56 md:h-48 lg:h-56 img-cover" />
-          <div class="absolute top-3 right-3 flex gap-2">
-            <button class="bg-white/80 text-gray-800 rounded-full p-2 shadow hover:scale-105 transform transition">❤</button>
-          </div>
+        
         </div>
 
         <div class="p-4">
